@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>New Review</h1>
+      <h2><%= @restaurant.name %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= simple_form_for([@restaurant, @review]) do |f| %>
+        <%= f.input :content, input_html: { class: 'form-control' } %>
+        <%= f.input :rating, collection: 0..5, input_html: { class: 'form-control' } %>
+        <%= f.submit 'Save review', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
